@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사진 포트폴리오</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      color: #333;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .gallery a {
+      display: block;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Photo Portfolio</h1>
+  </header>
+  <section class="gallery">
+    <a href="images/photo1.jpg" class="glightbox"><img src="images/photo1.jpg" alt="사진 1"></a>
+    <a href="images/photo2.jpg" class="glightbox"><img src="images/photo2.jpg" alt="사진 2"></a>
+    <a href="images/photo3.jpg" class="glightbox"><img src="images/photo3.jpg" alt="사진 3"></a>
+    <a href="images/photo4.jpg" class="glightbox"><img src="images/photo4.jpg" alt="사진 4"></a>
+    <a href="images/photo5.jpg" class="glightbox"><img src="images/photo5.jpg" alt="사진 5"></a>
+    <a href="images/photo6.jpg" class="glightbox"><img src="images/photo6.jpg" alt="사진 6"></a>
+    <a href="images/photo7.jpg" class="glightbox"><img src="images/photo7.jpg" alt="사진 7"></a>
+    <a href="images/photo8.jpg" class="glightbox"><img src="images/photo8.jpg" alt="사진 8"></a>
+    <a href="images/photo9.jpg" class="glightbox"><img src="images/photo9.jpg" alt="사진 9"></a>
+    <a href="images/photo10.jpg" class="glightbox"><img src="images/photo10.jpg" alt="사진 10"></a>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
+</body>
+</html>
