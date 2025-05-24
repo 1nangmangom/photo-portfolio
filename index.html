@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Portfolio</title>
+  <title>nangmangomtengi</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Photo Portfolio</h1>
+    <h1>nangmangomtengi</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#gallery">Gallery</a>
@@ -20,14 +39,33 @@
     <h2>Cha</h2>
     <p>Photographer and visual storyteller</p>
     <div class="buttons">
-      <a href="#" class="btn">Instagram</a>
-      <a href="mailto:you@example.com" class="btn">Email</a>
+      <a href="https://www.instagram.com/nangmangomtengi/" class="btn" target="_blank">Instagram</a>
     </div>
   </section>
+
   <section id="gallery" class="gallery">
     <!-- Gallery images will be loaded here dynamically -->
   </section>
 
+  <div id="lightbox" class="lightbox" style="display: none;">
+    <img src="" alt="Expanded view" />
+  </div>
+
   <script src="script.js"></script>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = lightbox.querySelector("img");
+
+    document.querySelector(".gallery").addEventListener("click", (e) => {
+      if (e.target.tagName === "IMG") {
+        lightboxImg.src = e.target.src;
+        lightbox.style.display = "flex";
+      }
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
 </body>
 </html>
